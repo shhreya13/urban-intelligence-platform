@@ -1,0 +1,9 @@
+opencv-python>=4.9.0
+requests>=2.31.0
+numpy>=1.24.0
+
+# OPTIONAL -- only needed if you run stub_backend.py (a local test double
+# for Person 4's backend, used for TEST 8 / a live demo of the FastAPI
+# interface before the real backend exists):
+# fastapi>=0.110.0
+# uvicorn[standard]>=0.29.0

@@ -1,0 +1,7 @@
+# Person 1 — Vehicle Detection + BoT-SORT Tracking + Counting
+# Only the dependencies this module actually needs.
+# Ultralytics pulls in torch/torchvision automatically as sub-dependencies.
+
+ultralytics>=8.3.0,<9.0.0
+opencv-python>=4.9.0
+numpy>=1.26.0,<2.0.0

@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-base-950 text-slate-200 font-sans;
+  font-feature-settings: "tnum";
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: theme("colors.base.600");
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Leaflet dark tiles + popup restyle to match the command-center theme */
+.leaflet-container {
+  background: #0a0e14;
+  font-family: inherit;
+}
+.leaflet-popup-content-wrapper {
+  background: #161d2c;
+  color: #e2e8f0;
+  border-radius: 10px;
+  border: 1px solid #31405a;
+}
+.leaflet-popup-tip {
+  background: #161d2c;
+}
+.leaflet-popup-content {
+  margin: 12px 14px;
+  font-size: 13px;
+}
+.leaflet-control-attribution {
+  background: rgba(10, 14, 20, 0.7) !important;
+  color: #64748b !important;
+}
+.leaflet-control-attribution a {
+  color: #94a3b8 !important;
+}
