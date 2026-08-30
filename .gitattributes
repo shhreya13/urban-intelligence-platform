@@ -1,0 +1,4 @@
+# Batch scripts MUST use CRLF line endings or cmd.exe misbehaves /
+# the console closes immediately on double-click.
+*.bat text eol=crlf
+*.cmd text eol=crlf

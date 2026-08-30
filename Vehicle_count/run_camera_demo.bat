@@ -17,7 +17,7 @@ echo [1/2] Checking backend...
 >nul 2>nul curl -s %BACKEND%/health
 if errorlevel 1 (
     echo   Backend is DOWN - starting it...
-    start "UIP-Backend" /min cmd /k "cd /d ""%~dp0..\..\Backend+Frontend\Backend+Frontend\backend"" && venv\Scripts\python -m uvicorn app.main:app --host 127.0.0.1 --port 8000"
+    start "UIP-Backend" /min cmd /k "cd /d ""%~dp0..\backend"" && venv\Scripts\python -m uvicorn app.main:app --host 127.0.0.1 --port 8000"
     timeout /t 6 /nobreak >nul
 ) else (
     echo   Backend is OK.

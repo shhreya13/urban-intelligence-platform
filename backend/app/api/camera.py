@@ -24,13 +24,12 @@ from fastapi import APIRouter
 
 router = APIRouter(prefix="/camera", tags=["camera"])
 
-# camera.py is at:  <root>\Backend+Frontend\Backend+Frontend\backend\app\api\camera.py
-# Going up 4 levels lands on <root>\Backend+Frontend\Backend+Frontend\backend
-# Going up 6 levels lands on <root> = E:\urban intelligence
+# camera.py is at:  <root>\backend\app\api\camera.py
+# Going up 3 levels lands on <root> (the repo root).
 _HERE = os.path.dirname(os.path.abspath(__file__))
-UIP_ROOT = os.path.abspath(os.path.join(_HERE, "..", "..", "..", "..", ".."))
-# We want: <root>\Vehicle_count\Vehicle_count  (a sibling of Backend+Frontend)
-VEHICLE_DIR = os.path.join(UIP_ROOT, "Vehicle_count", "Vehicle_count")
+UIP_ROOT = os.path.abspath(os.path.join(_HERE, "..", "..", ".."))
+# We want: <root>\Vehicle_count  (sibling of backend/)
+VEHICLE_DIR = os.path.join(UIP_ROOT, "Vehicle_count")
 VENV_PY = os.path.join(VEHICLE_DIR, ".venv", "Scripts", "python.exe")
 LIVE_DEMO = os.path.join(VEHICLE_DIR, "live_demo.py")
 

@@ -16,7 +16,7 @@
  * - backend/app/api/events.py, traffic.py, buses.py -> the real endpoints
  */
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const USE_MOCK = String(import.meta.env.VITE_USE_MOCK) === 'true'
 
 import { mockEvents, mockBuses, mockTraffic } from '../data/mockEvents.js'

@@ -18,6 +18,13 @@ import sys
 import os
 import uuid
 
+# Make the repo root importable + resolvable regardless of the current
+# working directory or where the repo was cloned.
+_HERE = os.path.dirname(os.path.abspath(__file__))          # .../Vehicle_count
+_REPO_ROOT = os.path.abspath(os.path.join(_HERE, ".."))
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
+
 import cv2
 import requests
 
@@ -26,9 +33,9 @@ from ultralytics import YOLO
 from ai.vehicle import VehicleDetector, VehicleTracker, ObjectCounter
 
 # ----------------------------------------------------------------------
-# CONFIG (paths are absolute so the script runs from anywhere)
+# CONFIG (resolved relative to the repo root so it works on any machine)
 # ----------------------------------------------------------------------
-POTHOLE_MODEL = r"E:\urban intelligence\urban-intelligence-platform-main\urban-intelligence-platform-main\ai\pothole\weights\best.pt"
+POTHOLE_MODEL = os.path.join(_REPO_ROOT, "ai", "pothole", "weights", "best.pt")
 BACKEND_URL = "http://127.0.0.1:8000"
 
 # Demo map coordinates (Chennai area - matches seeded buses)
